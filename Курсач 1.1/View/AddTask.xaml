@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="Курсач_1._1.View.AddTask"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" d:DesignWidth="800" Height="435">
+
+    <Grid Margin="0,0,115,60.2">
+        <Canvas HorizontalAlignment="Left">
+            <Label Content="Task creation" Foreground="LightGray" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="32,10,0,0" Height="25" Width="283"/>
+            
+            <TextBox x:Name="tbHeader"  Style="{StaticResource TextBoxStyleHeader}" HorizontalAlignment="Left" Height="35"  TextWrapping="Wrap" VerticalAlignment="Top" Width="353" Canvas.Left="32" Canvas.Top="40"/>
+            <TextBox x:Name="AddedTask" Style="{StaticResource TextBoxStyleText}"   HorizontalAlignment="Left" Height="170" TextWrapping="Wrap" VerticalAlignment="Top" Width="353" Canvas.Left="32" Canvas.Top="80" VerticalContentAlignment="Top"/>
+            
+            <ComboBox x:Name="cbHier" SelectedIndex="0" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="200" Canvas.Left="460" Canvas.Top="145"/>
+            
+            <Button Content="Save" HorizontalAlignment="Left" Height="60" Command="ApplicationCommands.Help" VerticalAlignment="Top" Width="120" Canvas.Left="32" Canvas.Top="270">
+                <Button.CommandBindings>
+                    <CommandBinding Command="Help" Executed="CommandBinding_Executed" />
+                </Button.CommandBindings>
+            </Button>
+            <Button Command="{Binding LoadMainUCCommand}" Content="Cancel" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="120" Canvas.Left="195" Canvas.Top="270"/>
+            
+            <DatePicker Name="dp" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="200" Canvas.Left="460" Canvas.Top="95"/>
+        </Canvas>
+        <Image x:Name="headerIm" HorizontalAlignment="Left" Visibility="Hidden" Height="25" Margin="5,50,0,0"    VerticalAlignment="Top" Width="20" Source="red_sign.png" ToolTip="Enter correct header"/>
+        <Image x:Name="textIm"   HorizontalAlignment="Left" Visibility="Hidden" Height="25" Margin="5,80,0,0"    VerticalAlignment="Top" Width="20" Source="red_sign.png" ToolTip="Enter correct text of the task"/>
+        <Image x:Name="dateIm"   HorizontalAlignment="Left" Visibility="Hidden" Height="25" Margin="425,100,0,0" VerticalAlignment="Top" Width="20" Source="red_sign.png" ToolTip="Enter correct date"/>
+    </Grid>
+</UserControl>

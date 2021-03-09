@@ -1,0 +1,34 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             
+    x:Class="Курсач_1._1.RoleView.Roles"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" >
+    <UserControl.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="LightGray"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="32"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <DataGrid x:Name="dgroles" AutoGenerateColumns="False" IsReadOnly="True" HorizontalAlignment="Left" Height="280" Margin="10,140,0,10" VerticalAlignment="Top" Width="380" SelectionChanged="dgroles_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Role" Width="10*" IsReadOnly="True" Binding="{Binding Role}" />
+                <DataGridTextColumn Header="Prioruty" Width="10*" IsReadOnly="True" Binding="{Binding Priority}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button x:Name="btnAdd"  Content="Add"     HorizontalAlignment="Left" Height="50" Margin="620,90,0,0"  VerticalAlignment="Top" Width="135" Click="btnAdd_Click"/>
+        <Button x:Name="btnEdit" Content="Edit"    HorizontalAlignment="Left" Height="55" Margin="620,175,0,0" VerticalAlignment="Top" Width="135" Click="btnEdit_Click" IsEnabled="False"/>
+        <Button x:Name="btnDel"  Content="Delete"  HorizontalAlignment="Left" Height="60" Margin="620,260,0,0" VerticalAlignment="Top" Width="135" Click="Delete_Click"  IsEnabled="False"/>
+        <Button MinWidth="60"    Content="Cancel"  HorizontalAlignment="Left" Height="55" Margin="620,345,0,0" VerticalAlignment="Top" Width="135" Click="Back_Click"/>
+
+        <Label Content="Managing roles" HorizontalAlignment="Left" Height="80" Margin="10,30,0,0" VerticalAlignment="Top" Width="380"/>
+
+    </Grid>
+</UserControl>
